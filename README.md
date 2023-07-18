@@ -62,4 +62,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_codebuild_arn"></a> [codebuild\_arn](#output\_codebuild\_arn) | n/a |
+| <a name="output_codebuild_id"></a> [codebuild\_id](#output\_codebuild\_id) | n/a |
 <!-- END_TF_DOCS -->
