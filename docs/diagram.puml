@@ -1,0 +1,29 @@
+@startuml terraform-aws-ecs-app
+
+
+!include <logos/github-icon>
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v15.0/dist
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/AWSSimplified.puml
+!include AWSPuml/Groups/all.puml
+!include AWSPuml/SecurityIdentityCompliance/all.puml
+!include AWSPuml/DeveloperTools/CodeBuild.puml
+
+AWSCloudGroup(cloud, "AWS")  {
+' GenericGroup(cloud, "AWS") {
+  CodeBuild(main, "main", "") #LightGreen
+  GenericGroup(iam, "IAM") {
+    IdentityAccessManagementRole(codebuild_role, "codebuild_role", "") #LightGreen
+    IdentityAccessManagementPermissions(codebuild_assume_role_policy_document, "codebuild_assume_role_policy_document", "") #LightGreen  
+    IdentityAccessManagementPermissions(codebuild_policy_document, "codebuild_policy_document", "") #LightGreen
+  }
+}
+
+rectangle "<$github-icon>\nSource Code" as github
+
+codebuild_assume_role_policy_document --> codebuild_role
+codebuild_policy_document --> codebuild_role
+codebuild_role --> main
+github -[dashed]-> main
+
+@enduml
