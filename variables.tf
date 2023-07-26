@@ -86,3 +86,20 @@ variable "permissions_boundary" {
   description = "ARN of the policy that is used to set the permissions boundary for the role."
   default     = ""
 }
+
+variable "environment_variables" {
+  type = list(object({
+    name  = string,
+    value = string,
+    type  = string
+  }))
+  description = "The environment variables to pass to a container. This parameter maps to Env in the Create a container section of the Docker Remote API and the --env option to docker run."
+  default     = []
+
+  validation {
+    condition = alltrue([
+      for obj in var.environment_variables : contains(["PARAMETER_STORE", "PLAINTEXT", "SECRETS_MANAGER"], obj.type)
+    ])
+    error_message = "Type can only be PARAMETER_STORE, PLAINTEXT, or SECRETS_MANAGER."
+  }
+}

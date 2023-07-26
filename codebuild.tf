@@ -15,6 +15,15 @@ resource "aws_codebuild_project" "main" {
     image           = var.codebuild_image
     type            = var.codebuild_type
     privileged_mode = true
+
+    dynamic "environment_variable" {
+      for_each = var.environment_variables
+      content {
+        name  = environment_variable.value.name
+        value = environment_variable.value.value
+        type  = environment_variable.value.type
+      }
+    }
   }
 
   source_version = var.github_repo_branch
