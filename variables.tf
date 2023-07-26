@@ -80,3 +80,9 @@ variable "vpc_security_group_ids" {
   default     = [""]
   description = "The IDs of the security groups for the CodeBuild project."
 }
+
+variable "permissions_boundary" {
+  type        = string
+  description = "ARN of the policy that is used to set the permissions boundary for the role."
+  default     = ""
+}

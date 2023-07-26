@@ -10,7 +10,13 @@ All notable changes to this project will be documented in this file.
 - Environment variable support
 - Support for non-GitHub sources
 
-## [0.0.1] - 2023-xx-xx
+## [0.0.2] - 2023-07-26
+
+### Added
+
+- Added support for boundary policy input.
+
+## [0.0.1] - 2023-07-20
 
 ### Added
 
