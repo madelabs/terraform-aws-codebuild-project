@@ -93,7 +93,7 @@ variable "environment_variables" {
     value = string,
     type  = string
   }))
-  description = "The environment variables to pass to a container. This parameter maps to Env in the Create a container section of the Docker Remote API and the --env option to docker run."
+  description = "The environment variables to create for the CodeBuild project."
   default     = []
 
   validation {
