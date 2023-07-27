@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 - Custom build image support
 - Support for non-GitHub sources
 
-## [0.0.2] - 2023-07-26
+## [0.0.2] - 2023-07-27
 
 ### Added
 
