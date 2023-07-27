@@ -7,10 +7,16 @@ All notable changes to this project will be documented in this file.
 - Caching support
 - Artifact support
 - Custom build image support
-- Environment variable support
 - Support for non-GitHub sources
 
-## [0.0.1] - 2023-xx-xx
+## [0.0.2] - 2023-07-27
+
+### Added
+
+- Added support for boundary policy input.
+- Added environment variable support.
+
+## [0.0.1] - 2023-07-20
 
 ### Added
 

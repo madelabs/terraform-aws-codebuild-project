@@ -50,8 +50,10 @@ No modules.
 | <a name="input_codebuild_project_description"></a> [codebuild\_project\_description](#input\_codebuild\_project\_description) | The description of the CodeBuild project. | `string` | n/a | yes |
 | <a name="input_codebuild_project_name"></a> [codebuild\_project\_name](#input\_codebuild\_project\_name) | The name of the CodeBuild project. | `string` | n/a | yes |
 | <a name="input_codebuild_type"></a> [codebuild\_type](#input\_codebuild\_type) | The environment type for the CodeBuild project.  This module supports: LINUX\_CONTAINER and ARM\_CONTAINER. | `string` | `"LINUX_CONTAINER"` | no |
+| <a name="input_environment_variables"></a> [environment\_variables](#input\_environment\_variables) | The environment variables to create for the CodeBuild project. | <pre>list(object({<br>    name  = string,<br>    value = string,<br>    type  = string<br>  }))</pre> | `[]` | no |
 | <a name="input_github_repo_branch"></a> [github\_repo\_branch](#input\_github\_repo\_branch) | The branch of the repository that will trigger the pipeline. | `string` | n/a | yes |
 | <a name="input_github_repo_url"></a> [github\_repo\_url](#input\_github\_repo\_url) | The .git URL to the source GitHub repository. | `string` | n/a | yes |
+| <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | ARN of the policy that is used to set the permissions boundary for the role. | `string` | `""` | no |
 | <a name="input_vpc_access_enabled"></a> [vpc\_access\_enabled](#input\_vpc\_access\_enabled) | Whether or not access to a VPC is enabled. | `bool` | `false` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The ID of a VPC thie project will connect to. | `string` | `""` | no |
 | <a name="input_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#input\_vpc\_security\_group\_ids) | The IDs of the security groups for the CodeBuild project. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
