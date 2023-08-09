@@ -103,3 +103,20 @@ variable "environment_variables" {
     error_message = "Type can only be PARAMETER_STORE, PLAINTEXT, or SECRETS_MANAGER."
   }
 }
+
+variable "enable_extra_iam_permissions" {
+  type        = bool
+  description = "Whether or not to enable the extra permissions described in extra_iam_permissions_json."
+  default     = false
+}
+
+variable "extra_iam_permissions_json_file" {
+  description = "The JSON filename relative to the root Terraform module that contains JSON formatted IAM policy to apply to the role."
+  type        = string
+  default     = "extra-iam-permissions.json"
+
+  validation {
+    condition     = endswith(var.extra_iam_permissions_json_file, ".json")
+    error_message = "The value of this variable must end with .json."
+  }
+}

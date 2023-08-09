@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 - Custom build image support
 - Support for non-GitHub sources
 
+## [0.0.3] - 2023-08-09
+
+### Added
+
+- Added the ability to specify extra permissions that will be associated to the embedded IAM role.
+
 ## [0.0.2] - 2023-07-27
 
 ### Added
