@@ -33,9 +33,11 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_codebuild_project.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project) | resource |
+| [aws_iam_policy.codebuild_extra_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.codebuild_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role.codebuild_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.codebuild_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.codebuild_extra_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_policy_document.codebuild_assume_role_policy_document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.codebuild_policy_document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
@@ -50,7 +52,9 @@ No modules.
 | <a name="input_codebuild_project_description"></a> [codebuild\_project\_description](#input\_codebuild\_project\_description) | The description of the CodeBuild project. | `string` | n/a | yes |
 | <a name="input_codebuild_project_name"></a> [codebuild\_project\_name](#input\_codebuild\_project\_name) | The name of the CodeBuild project. | `string` | n/a | yes |
 | <a name="input_codebuild_type"></a> [codebuild\_type](#input\_codebuild\_type) | The environment type for the CodeBuild project.  This module supports: LINUX\_CONTAINER and ARM\_CONTAINER. | `string` | `"LINUX_CONTAINER"` | no |
+| <a name="input_enable_extra_iam_permissions"></a> [enable\_extra\_iam\_permissions](#input\_enable\_extra\_iam\_permissions) | Whether or not to enable the extra permissions described in extra\_iam\_permissions\_json. | `bool` | `false` | no |
 | <a name="input_environment_variables"></a> [environment\_variables](#input\_environment\_variables) | The environment variables to create for the CodeBuild project. | <pre>list(object({<br>    name  = string,<br>    value = string,<br>    type  = string<br>  }))</pre> | `[]` | no |
+| <a name="input_extra_iam_permissions_json_file"></a> [extra\_iam\_permissions\_json\_file](#input\_extra\_iam\_permissions\_json\_file) | The JSON filename relative to the root Terraform module that contains JSON formatted IAM policy to apply to the role. | `string` | `"extra-iam-permissions.json"` | no |
 | <a name="input_github_repo_branch"></a> [github\_repo\_branch](#input\_github\_repo\_branch) | The branch of the repository that will trigger the pipeline. | `string` | n/a | yes |
 | <a name="input_github_repo_url"></a> [github\_repo\_url](#input\_github\_repo\_url) | The .git URL to the source GitHub repository. | `string` | n/a | yes |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | ARN of the policy that is used to set the permissions boundary for the role. | `string` | `""` | no |
