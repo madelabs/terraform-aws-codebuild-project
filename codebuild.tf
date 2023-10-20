@@ -11,9 +11,12 @@ resource "aws_codebuild_project" "main" {
   }
 
   environment {
-    compute_type    = var.codebuild_compute_type
-    image           = var.codebuild_image
-    type            = var.codebuild_type
+    compute_type = var.codebuild_compute_type
+    type         = var.codebuild_type
+
+    image                       = var.codebuild_image
+    image_pull_credentials_type = var.codebuild_image_pull_credentials_type
+
     privileged_mode = true
 
     dynamic "environment_variable" {

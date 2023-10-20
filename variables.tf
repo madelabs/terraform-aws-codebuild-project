@@ -120,3 +120,14 @@ variable "extra_iam_permissions_json_file" {
     error_message = "The value of this variable must end with .json."
   }
 }
+
+variable "codebuild_image_pull_credentials_type" {
+  type        = string
+  description = "Type of credentials AWS CodeBuild uses to pull images in your build. Valid values: CODEBUILD, SERVICE_ROLE. When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an AWS CodeBuild curated image, you must use CodeBuild credentials."
+  default     = "CODEBUILD"
+
+  validation {
+    condition     = var.codebuild_image_pull_credentials_type == "CODEBUILD" || var.codebuild_image_pull_credentials_type == "SERVICE_ROLE"
+    error_message = "codebuild_type must be one of: CODEBUILD or SERVICE_ROLE."
+  }
+}
