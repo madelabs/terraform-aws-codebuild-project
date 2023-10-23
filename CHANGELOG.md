@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 - Custom build image support
 - Support for non-GitHub sources
 
+## [0.0.4] - 2023-10-20
+
+### Added
+
+- Added the ability to specify the credentials used to pull custom images.
+
 ## [0.0.3] - 2023-08-09
 
 ### Added
