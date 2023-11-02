@@ -135,5 +135,5 @@ variable "codebuild_image_pull_credentials_type" {
 variable "codebuild_service_role_arn" {
   type        = string
   description = "The service role arn the codebuild will use. If not provided, a new IAM role will be created for the codebuild."
-  default = ""
+  default     = ""
 }
