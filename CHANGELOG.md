@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Artifact support
 - Custom build image support
 - Support for non-GitHub sources
+- Support for providing a role arn for the codebuild
 
 ## [0.0.4] - 2023-10-20
 
