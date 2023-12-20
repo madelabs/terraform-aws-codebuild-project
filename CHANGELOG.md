@@ -9,6 +9,16 @@ All notable changes to this project will be documented in this file.
 - Custom build image support
 - Support for non-GitHub sources
 
+## [0.0.6] - 2023-12-20
+
+### Added
+
+- Added the support for `WINDOWS_SERVER_2019_CONTAINER` projects.
+
+### Changed
+
+- Changed the default `codebuild_build_timeout` from 5 minutes to 10 minutes.
+
 ## [0.0.5] - 2023-11-07
 
 ### Added
