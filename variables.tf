@@ -37,19 +37,19 @@ variable "codebuild_compute_type" {
 
 variable "codebuild_type" {
   type        = string
-  description = "The environment type for the CodeBuild project.  This module supports: LINUX_CONTAINER and ARM_CONTAINER."
+  description = "The environment type for the CodeBuild project.  This module supports: LINUX_CONTAINER, ARM_CONTAINER, and WINDOWS_SERVER_2019_CONTAINER."
   default     = "LINUX_CONTAINER"
 
   validation {
-    condition     = var.codebuild_type == "LINUX_CONTAINER" || var.codebuild_type == "ARM_CONTAINER"
-    error_message = "codebuild_type must be one of: LINUX_CONTAINER or ARM_CONTAINER."
+    condition     = var.codebuild_type == "LINUX_CONTAINER" || var.codebuild_type == "ARM_CONTAINER" || var.codebuild_type == "WINDOWS_SERVER_2019_CONTAINER"
+    error_message = "codebuild_type must be one of: LINUX_CONTAINER, ARM_CONTAINER, or WINDOWS_SERVER_2019_CONTAINER."
   }
 }
 
 variable "codebuild_build_timeout" {
   type        = number
   description = "The number of minutes until the CodeBuild project times-out."
-  default     = 5
+  default     = 10
 }
 
 variable "github_repo_url" {
