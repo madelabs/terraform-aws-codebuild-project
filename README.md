@@ -60,6 +60,7 @@ No modules.
 | <a name="input_github_repo_branch"></a> [github\_repo\_branch](#input\_github\_repo\_branch) | The branch of the repository that will trigger the pipeline. | `string` | n/a | yes |
 | <a name="input_github_repo_url"></a> [github\_repo\_url](#input\_github\_repo\_url) | The .git URL to the source GitHub repository. | `string` | n/a | yes |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | ARN of the policy that is used to set the permissions boundary for the role. | `string` | `""` | no |
+| <a name="input_privileged_mode"></a> [privileged\_mode](#input\_privileged\_mode) | Whether to enable running the Docker daemon inside a Docker container. | `bool` | `false` | no |
 | <a name="input_vpc_access_enabled"></a> [vpc\_access\_enabled](#input\_vpc\_access\_enabled) | Whether or not access to a VPC is enabled. | `bool` | `false` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The ID of a VPC thie project will connect to. | `string` | `""` | no |
 | <a name="input_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#input\_vpc\_security\_group\_ids) | The IDs of the security groups for the CodeBuild project. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
