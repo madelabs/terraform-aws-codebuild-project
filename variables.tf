@@ -137,3 +137,9 @@ variable "codebuild_service_role_arn" {
   description = "The service role arn the codebuild will use. If not provided, a new IAM role will be created for the codebuild."
   default     = ""
 }
+
+variable "privileged_mode" {
+  type        = bool
+  description = "Whether to enable running the Docker daemon inside a Docker container."
+  default     = false
+}

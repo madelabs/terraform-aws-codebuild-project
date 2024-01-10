@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 - Custom build image support
 - Support for non-GitHub sources
 
+## [0.0.7] - 2024-01-10
+
+### Added
+
+- Added support to specify `privileged_mode` for a project.
+
 ## [0.0.6] - 2023-12-20
 
 ### Added
