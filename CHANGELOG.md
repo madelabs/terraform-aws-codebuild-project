@@ -9,6 +9,11 @@ All notable changes to this project will be documented in this file.
 - Custom build image support
 - Support for non-GitHub sources
 
+## [0.0.8] - 2024-08-19
+
+- Increase default of build timeout variable to 20 minutes.
+- Set default for build image variable to `aws/codebuild/standard:7.0`. 
+
 ## [0.0.7] - 2024-01-10
 
 ### Added

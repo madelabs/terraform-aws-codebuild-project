@@ -16,7 +16,7 @@ variable "github_repo_branch" {
 variable "codebuild_image" {
   type        = string
   description = "Docker image to use for this build project. Valid values include Docker images provided by CodeBuild (e.g aws/codebuild/standard:2.0), Docker Hub images (e.g., hashicorp/terraform:latest), and full Docker repository URIs such as those for ECR (e.g., 137112412989.dkr.ecr.us-west-2.amazonaws.com/amazonlinux:latest)."
-  default     = "aws/codebuild/standard:6.0"
+  default     = "aws/codebuild/standard:7.0"
 }
 
 variable "buildspec" {
@@ -49,7 +49,7 @@ variable "codebuild_type" {
 variable "codebuild_build_timeout" {
   type        = number
   description = "The number of minutes until the CodeBuild project times-out."
-  default     = 10
+  default     = 20
 }
 
 variable "github_repo_url" {
